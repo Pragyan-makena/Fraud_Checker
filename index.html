@@ -1,0 +1,15 @@
+const video = document.createElement("video");
+
+video.autoplay = true;
+video.width = 640;
+video.height = 480;
+
+document.body.appendChild(video);
+
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then((stream) => {
+        video.srcObject = stream;
+    })
+    .catch((error) => {
+        console.log(error);
+    });
