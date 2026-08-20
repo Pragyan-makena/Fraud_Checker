@@ -1,15 +1,25 @@
-const video = document.createElement("video");
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Checker</title>
+</head>
+<body>
+    <script>
+        const video = document.createElement("video");
 
-video.autoplay = true;
-video.width = 640;
-video.height = 480;
+        video.autoplay = true;
+        video.width = 640;
+        video.height = 480;
 
-document.body.appendChild(video);
+        document.body.appendChild(video);
 
-navigator.mediaDevices.getUserMedia({ video: true })
-    .then((stream) => {
-        video.srcObject = stream;
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    </script>
+</body>
+</html>
